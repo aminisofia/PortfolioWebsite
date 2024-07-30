@@ -1,7 +1,39 @@
-.main {
-    color: red;
+@font-face{
+    font-family: Daydream;
+    src: url(fonts/Daydream.ttf);
 }
 
-.notMain {
-    background-color: blue;
+body {
+    margin: 0;
 }
+
+.about{
+     width:calc(100%-20px);
+     min-height: 3in;
+     padding: 10px;
+     border-radius: 15px;
+     background-color:#E7B1B6;
+}
+.about > p{
+    font-family: Daydream;
+    font-size: 30px;
+    color: #242222;
+    margin: 0;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width:calc(100%-20px);
+    background-color:#FFCFDA;
+    border-radius: 15px;
+    gap: 20px;
+    padding: 20px;
+}
+
+.project {
+    aspect-ratio: 1;
+    background-color:lavender;
+    border-radius:15px;
+}
+
