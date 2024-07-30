@@ -7,18 +7,30 @@ body {
     margin: 0;
 }
 
-.about{
+.main-body {
+    width: 60%;
+}
+
+.about {
      width:calc(100%-20px);
      min-height: 3in;
      padding: 10px;
      border-radius: 15px;
      background-color:#E7B1B6;
+     display:flex;
+     flex-direction: horizontal;
 }
-.about > p{
+
+.about > p {
     font-family: Daydream;
     font-size: 30px;
     color: #242222;
     margin: 0;
+}
+
+.about > img {
+    height: 2.5in;
+    aspect-ratio: 1.07493465001;
 }
 
 .projects-container {
