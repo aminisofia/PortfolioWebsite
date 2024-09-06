@@ -1,0 +1,19 @@
+
+.cartBox {
+    display: grid;
+    width: calc(83*var(--pixel));
+    aspect-ratio: 1;
+    background-image: url("images/boxCarts.png");
+    image-rendering: pixelated;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-template-columns: repeat(2,calc(37*var(--pixel)));
+    grid-template-rows: repeat(9,calc(8*var(--pixel)));
+    grid-column-gap: calc(3*var(--pixel));
+    grid-auto-flow: column;
+    padding: calc(3*var(--pixel));
+}
+
+.cartBox > img {
+    width: 100%;
+}
