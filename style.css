@@ -3,7 +3,14 @@
 }
 
 :root{
-    --pixel: 0.3vw;
+    --pixel: 0.2vw;
+}
+
+img {
+    -webkit-user-select: none;  /* Safari */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Standard syntax */
+    -webkit-user-drag: none;    /* Safari */
 }
 
 body {
@@ -15,20 +22,21 @@ body {
 
 .aboutBox {
     image-rendering: pixelated;
-    width: 50vw;
+    width: 45vw;
     aspect-ratio: 272/116;
     background-image: url("images/aboutMe.png");
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     margin-top: 5vw;
+    margin-bottom: 5vw;
 }
 
 .aboutBox > img:first-child {
     width: 12vw;
     position: absolute;
     right: 5vw;
-    top: 5vw;
+    top: 4vw;
     border-radius: 10px;
     border: #9babb2 solid;
 }

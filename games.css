@@ -1,4 +1,12 @@
 
+.gamesSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: calc(195*var(--pixel));
+}
+
+
 .cartBox {
     display: grid;
     width: calc(83*var(--pixel));
@@ -12,8 +20,57 @@
     grid-column-gap: calc(3*var(--pixel));
     grid-auto-flow: column;
     padding: calc(3*var(--pixel));
+    overflow: hidden;
 }
 
 .cartBox > img {
     width: 100%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.cartBox > img:hover {
+    transform: scale(1.1);
+}
+
+.bigCart {
+    width: calc(80 * var(--pixel));
+    height: calc(100 * var(--pixel));
+    perspective: calc(1000 * var(--pixel));
+    display: none;
+}
+
+.bigCartInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*text-align: center;*/
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.bigCart.is-flipped .bigCartInner {
+    transform: rotateY(360deg);
+}
+
+.bigCartFront, .bigCartBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bigCartBack {
+    transform: rotateY(180deg);
+}
+
+.bigCartFront img, .bigCartBack img {
+    margin-top: -5vw;
+    image-rendering: pixelated;
+    width: calc(100 * var(--pixel));
+    height: calc(120 * var(--pixel));
+
 }
