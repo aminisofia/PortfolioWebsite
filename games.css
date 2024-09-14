@@ -20,7 +20,7 @@
     grid-column-gap: calc(3*var(--pixel));
     grid-auto-flow: column;
     padding: calc(3*var(--pixel));
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .cartBox > img {
@@ -72,5 +72,5 @@
     image-rendering: pixelated;
     width: calc(100 * var(--pixel));
     height: calc(120 * var(--pixel));
-
+    cursor: pointer;
 }
