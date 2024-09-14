@@ -1,25 +1,28 @@
 
 .gamesSection {
     display: flex;
+    height: calc(250 * var(--pixel));
     justify-content: space-between;
     align-items: flex-start;
-    width: calc(195*var(--pixel));
+    width: calc(400 * var(--pixel));
+    margin-bottom: calc(40 * var(--pixel));
 }
 
 
 .cartBox {
     display: grid;
-    width: calc(83*var(--pixel));
-    aspect-ratio: 1;
-    background-image: url("images/boxCarts.png");
+    /*margin-top: calc(50 * var(--pixel));*/
+    width: calc(175 * var(--pixel));
+    height: calc(129 * var(--pixel));
+    background-image: url("images/boxCarts2.png");
     image-rendering: pixelated;
     background-repeat: no-repeat;
     background-size: cover;
-    grid-template-columns: repeat(2,calc(37*var(--pixel)));
-    grid-template-rows: repeat(9,calc(8*var(--pixel)));
-    grid-column-gap: calc(3*var(--pixel));
+    grid-template-columns: repeat(2,calc(81*var(--pixel)));
+    grid-template-rows: repeat(8,calc(15*var(--pixel)));
+    grid-column-gap: calc(5*var(--pixel));
     grid-auto-flow: column;
-    padding: calc(3*var(--pixel));
+    padding: calc(4*var(--pixel));
     /*overflow: hidden;*/
 }
 
@@ -34,10 +37,11 @@
 }
 
 .bigCart {
-    width: calc(80 * var(--pixel));
-    height: calc(100 * var(--pixel));
-    perspective: calc(1000 * var(--pixel));
+    width: calc(200 * var(--pixel));
+    height: calc(250 * var(--pixel));
+    perspective: calc(500 * var(--pixel));
     display: none;
+
 }
 
 .bigCartInner {
@@ -68,9 +72,8 @@
 }
 
 .bigCartFront img, .bigCartBack img {
-    margin-top: -5vw;
     image-rendering: pixelated;
-    width: calc(100 * var(--pixel));
-    height: calc(120 * var(--pixel));
+    width: calc(200 * var(--pixel));
+    height: calc(250 * var(--pixel));
     cursor: pointer;
 }

@@ -3,7 +3,7 @@
 }
 
 :root{
-    --pixel: 0.2vw;
+    --pixel: round(.1vw,1px);
 }
 
 img {
@@ -14,37 +14,39 @@ img {
 }
 
 body {
-    background-color: #ffe5ea;
+    background-image: url(images/noisebg4.png);
+    background-repeat: repeat;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
+
 .aboutBox {
     image-rendering: pixelated;
-    width: 45vw;
-    aspect-ratio: 272/116;
-    background-image: url("images/aboutMe.png");
+    width: calc(430 * var(--pixel));
+    height: calc(142 * var(--pixel));
+    background-image: url("images/aboutMe2.png");
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    margin-top: 5vw;
-    margin-bottom: 5vw;
+    margin-top: calc(40 * var(--pixel));
+    margin-bottom: calc(40 * var(--pixel));
 }
 
 .aboutBox > img:first-child {
-    width: 12vw;
+    width: calc(80 * var(--pixel));
     position: absolute;
-    right: 5vw;
-    top: 4vw;
+    right: calc(40 * var(--pixel));
+    top: calc(35 * var(--pixel));
     border-radius: 10px;
     border: #9babb2 solid;
 }
 
 .aboutBox > img:last-child {
-    width: 18vw;
+    width: calc(88 * var(--pixel));
     position: absolute;
-    top: -.3vw;
-    left: 2vw;
+    top: calc(5 * var(--pixel));
+    left: calc(33 * var(--pixel));
 
 }

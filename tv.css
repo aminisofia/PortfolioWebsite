@@ -1,16 +1,17 @@
 .tv {
-    background-image: url(images/tv2.png);
-    background-color: red;
+    background-color: black;
     image-rendering: pixelated;
     background-repeat: no-repeat;
     background-size: cover;
     width:  calc(400 * var(--pixel));
     height: calc(225 * var(--pixel));
-    padding: var(--pixel);
+    margin-bottom: calc(50 * var(--pixel));
+    user-select: none;
 }
 
 .tv > iframe {
     width: 100%;
     height: 100%;
     border: 0;
+    user-select: none;
 }

@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const tviframe = document.getElementById('tviframe');
     const bigCart = document.querySelector('.bigCart');
     const cattaleCart = document.querySelector('.cattale-cart');
     const bigCartInner = document.querySelector('.bigCartInner');
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             spinBigCart();
         }
+        tviframe.src = "projects/cattale.html"
     });
 
     otherCarts.forEach(cart => {
