@@ -4,7 +4,7 @@
     height: calc(250 * var(--pixel));
     justify-content: space-between;
     align-items: flex-start;
-    width: calc(400 * var(--pixel));
+    width: calc(419 * var(--pixel));
     margin-bottom: calc(40 * var(--pixel));
 }
 
@@ -40,7 +40,7 @@
     width: calc(200 * var(--pixel));
     height: calc(250 * var(--pixel));
     perspective: calc(500 * var(--pixel));
-    display: none;
+    /*display: none;*/
 
 }
 

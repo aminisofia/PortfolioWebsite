@@ -1,11 +1,34 @@
+window.addEventListener("keydown", function(e) {
+    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     const tviframe = document.getElementById('tviframe');
     const bigCart = document.querySelector('.bigCart');
-    const cattaleCart = document.querySelector('.cattale-cart');
     const bigCartInner = document.querySelector('.bigCartInner');
-    const otherCarts = document.querySelectorAll('.cartBox img:not(.cattale-cart)');
+    const otherCarts = document.querySelectorAll('.cartBox img');
+    const bigCartFront = document.querySelector('.bigCartFront img');
 
     let isSpun = false;
+
+    for (let cart of otherCarts) {
+        cart.addEventListener('click', function() {
+            setTimeout(() => {
+                bigCartFront.src = cart.getAttribute("data-img");
+            }, 300);
+            if (bigCart.style.display === 'none' || bigCart.style.display === '') {
+                showBigCart();
+                // Delay the spin slightly to ensure it's visible after showing
+                setTimeout(spinBigCart, 50);
+            } else {
+                spinBigCart();
+            }
+            tviframe.src = cart.getAttribute("data-game");
+        })
+    }
 
     function spinBigCart() {
         // Force a reflow before applying the transform
@@ -32,22 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300); // Match this with your CSS transition time
     }
 
-    cattaleCart.addEventListener('click', function() {
-        if (bigCart.style.display === 'none' || bigCart.style.display === '') {
-            showBigCart();
-            // Delay the spin slightly to ensure it's visible after showing
-            setTimeout(spinBigCart, 50);
-        } else {
-            spinBigCart();
-        }
-        tviframe.src = "projects/cattale.html"
-    });
-
-    otherCarts.forEach(cart => {
-        cart.addEventListener('click', hideBigCart);
-    });
-
     bigCart.addEventListener('click', function(event) {
+        if (bigCartFront.src.includes("images/stickynote.png")) {
+            return;
+        }
         event.stopPropagation();
         spinBigCart();
     });
