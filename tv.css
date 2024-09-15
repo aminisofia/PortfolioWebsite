@@ -6,9 +6,11 @@
     height: calc(225 * var(--pixel));
     margin-bottom: calc(50 * var(--pixel));
     user-select: none;
+    border: black solid 1px;
 }
 
 .mantel {
+    image-rendering: pixelated;
     background-image: url(images/mantel.png);
     background-repeat: no-repeat;
     background-size: cover;
