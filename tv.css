@@ -4,18 +4,41 @@
     background-size: cover;
     width:  calc(400 * var(--pixel));
     height: calc(225 * var(--pixel));
+    margin-top: calc(19 * var(--pixel));
     margin-bottom: calc(50 * var(--pixel));
     user-select: none;
     border: black solid 1px;
+    position: relative;
 }
 
-.mantel {
+/*console*/
+.items > img:nth-child(1) {
     image-rendering: pixelated;
-    background-image: url(images/mantel.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: calc(81 * var(--pixel));
+    width: calc(170 * var(--pixel));
+    margin-top: calc(-74* var(--pixel));
+    left: calc(224* var(--pixel));
+    position: absolute;
+    z-index: 1;
+}
+
+/*wire*/
+.items > img:nth-child(2) {
+    image-rendering: pixelated;
+    height: calc(270 * var(--pixel));
+    width: calc(13 * var(--pixel));
+    margin-top: calc(-15* var(--pixel));
+    left: calc(211* var(--pixel));
+    position: absolute;
+}
+
+/*mantel*/
+.items > img:nth-child(3) {
+    image-rendering: pixelated;
     height: calc(19 * var(--pixel));
-    width: calc(425 * var(--pixel));
+    width: calc(424 * var(--pixel));
+    position: absolute;
+    left: calc(212* var(--pixel));
 }
 
 .tv > iframe {
@@ -25,4 +48,3 @@
     user-select: none;
     background-color: #2e222f;
 }
-
