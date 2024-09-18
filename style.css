@@ -14,7 +14,7 @@ img {
 }
 
 body {
-    background-image: url(images/noisebg4.png);
+    background-image: url(images/mainBody/noisebg4.png);
     background-repeat: repeat;
     display: flex;
     align-items: center;
@@ -26,7 +26,7 @@ body {
     image-rendering: pixelated;
     width: calc(430 * var(--pixel));
     height: calc(142 * var(--pixel));
-    background-image: url("images/aboutMe2.png");
+    background-image: url("images/mainBody/aboutMe2.png");
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;

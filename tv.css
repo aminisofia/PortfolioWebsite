@@ -8,37 +8,56 @@
     margin-bottom: calc(50 * var(--pixel));
     user-select: none;
     border: black solid 1px;
-    position: relative;
+    }
+
+.items {
+    position:relative;
+    width: calc(425 * var(--pixel));
+}
+
+.items > img {
+    image-rendering: pixelated;
+    position: absolute;
 }
 
 /*console*/
 .items > img:nth-child(1) {
-    image-rendering: pixelated;
     height: calc(81 * var(--pixel));
     width: calc(170 * var(--pixel));
     margin-top: calc(-74* var(--pixel));
-    left: calc(224* var(--pixel));
-    position: absolute;
+    left: calc(12* var(--pixel));
     z-index: 1;
 }
 
 /*wire*/
 .items > img:nth-child(2) {
-    image-rendering: pixelated;
-    height: calc(270 * var(--pixel));
-    width: calc(13 * var(--pixel));
+    height: calc(271 * var(--pixel));
+    width: calc(14 * var(--pixel));
     margin-top: calc(-15* var(--pixel));
-    left: calc(211* var(--pixel));
-    position: absolute;
+    left: calc(-1* var(--pixel));
 }
 
 /*mantel*/
 .items > img:nth-child(3) {
-    image-rendering: pixelated;
     height: calc(19 * var(--pixel));
     width: calc(424 * var(--pixel));
-    position: absolute;
-    left: calc(212* var(--pixel));
+    /*left: calc(212* var(--pixel));*/
+}
+
+/*smallCart*/
+.items > img:nth-child(4) {
+    height: calc(52 * var(--pixel));
+    width: calc(41 * var(--pixel));
+    left: calc(35* var(--pixel));
+    margin-top: calc(-100* var(--pixel));
+}
+
+/*portal cube*/
+.items > img:nth-child(5) {
+    height: calc(23 * var(--pixel));
+    width: calc(23 * var(--pixel));
+    top: calc(-22 * var(--pixel));
+    left: calc(195 * var(--pixel));
 }
 
 .tv > iframe {
@@ -48,3 +67,31 @@
     user-select: none;
     background-color: #2e222f;
 }
+
+
+/*@keyframes flyToConsole {*/
+/*    0% {*/
+/*        transform: translate(0, 0) scale(1);*/
+/*        opacity: 1;*/
+/*    }*/
+/*    100% {*/
+/*        transform: translate(var(--flyX), var(--flyY)) scale(0.5);*/
+/*        opacity: 1; !* Change this to 1 to see the end position *!*/
+/*    }*/
+/*}*/
+
+/*.flying-cart {*/
+/*    image-rendering: pixelated;*/
+/*    position: fixed;*/
+/*    pointer-events: none;*/
+/*    !* ... other properties ... *!*/
+/*    animation: flyToConsole 2s ease-in-out forwards; !* Increase duration to 2s *!*/
+/*    background-color: rgba(255, 0, 0, 0.5); !* Add a background color for visibility *!*/
+/*}*/
+
+/*.inserted-cart {*/
+/*    image-rendering: pixelated;*/
+/*    position: fixed;*/
+/*    pointer-events: none;*/
+/*    z-index: 2;*/
+/*}*/

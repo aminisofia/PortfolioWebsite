@@ -8,13 +8,22 @@
     margin-bottom: calc(40 * var(--pixel));
 }
 
+/*grog sticker*/
+.stickers > img {
+    image-rendering: pixelated;
+    width: calc(49 * var(--pixel));
+    height: calc(41 * var(--pixel));
+    position: absolute;
+    top: calc(205 * var(--pixel));
+    left: calc(340 * var(--pixel));
+}
 
 .cartBox {
     display: grid;
-    /*margin-top: calc(50 * var(--pixel));*/
+    margin-top: calc(20 * var(--pixel));
     width: calc(175 * var(--pixel));
     height: calc(129 * var(--pixel));
-    background-image: url("images/boxCarts2.png");
+    background-image: url("images/mainBody/boxCarts2.png");
     image-rendering: pixelated;
     background-repeat: no-repeat;
     background-size: cover;
@@ -40,9 +49,7 @@
     width: calc(200 * var(--pixel));
     height: calc(250 * var(--pixel));
     perspective: calc(500 * var(--pixel));
-    /*display: none;*/
-
-}
+ }
 
 .bigCartInner {
     position: relative;
