@@ -68,30 +68,3 @@
     background-color: #2e222f;
 }
 
-
-/*@keyframes flyToConsole {*/
-/*    0% {*/
-/*        transform: translate(0, 0) scale(1);*/
-/*        opacity: 1;*/
-/*    }*/
-/*    100% {*/
-/*        transform: translate(var(--flyX), var(--flyY)) scale(0.5);*/
-/*        opacity: 1; !* Change this to 1 to see the end position *!*/
-/*    }*/
-/*}*/
-
-/*.flying-cart {*/
-/*    image-rendering: pixelated;*/
-/*    position: fixed;*/
-/*    pointer-events: none;*/
-/*    !* ... other properties ... *!*/
-/*    animation: flyToConsole 2s ease-in-out forwards; !* Increase duration to 2s *!*/
-/*    background-color: rgba(255, 0, 0, 0.5); !* Add a background color for visibility *!*/
-/*}*/
-
-/*.inserted-cart {*/
-/*    image-rendering: pixelated;*/
-/*    position: fixed;*/
-/*    pointer-events: none;*/
-/*    z-index: 2;*/
-/*}*/

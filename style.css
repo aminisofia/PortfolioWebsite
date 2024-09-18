@@ -3,7 +3,31 @@
 }
 
 :root{
-    --pixel: round(.1vw,1px);
+    --pixel: 1px;
+}
+
+@media screen and (min-width: 1000px) {
+    :root {
+        --pixel: 2px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    :root {
+        --pixel: 3px;
+    }
+}
+
+@media screen and (min-width: 3000px) {
+    :root {
+        --pixel: 4px;
+    }
+}
+
+@media screen and (min-width: 4000px) {
+    :root {
+        --pixel: 5px;
+    }
 }
 
 img {
@@ -19,6 +43,8 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    max-width: 2000px; /* or whatever maximum width you prefer */
+    margin: 0 auto; /* centers the body if the screen is wider than max-width */
 }
 
 

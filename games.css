@@ -8,14 +8,18 @@
     margin-bottom: calc(40 * var(--pixel));
 }
 
+.stickers{
+    position:relative;
+}
+
 /*grog sticker*/
 .stickers > img {
     image-rendering: pixelated;
+    position: absolute;
     width: calc(49 * var(--pixel));
     height: calc(41 * var(--pixel));
-    position: absolute;
-    top: calc(205 * var(--pixel));
-    left: calc(340 * var(--pixel));
+    top: calc(-19 * var(--pixel));
+    left: calc(125 * var(--pixel));
 }
 
 .cartBox {
