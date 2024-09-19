@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const otherCarts = document.querySelectorAll('.cartBox img');
     const bigCartFront = document.querySelector('.bigCartFront img');
     const movingCart = document.querySelector('.items > img:nth-child(4)');
+    movingCart.style.display = 'none';
 
     let isSpun = false;
     let lastClickedCart = null;
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let cart of otherCarts) {
         cart.addEventListener('click', function() {
             // Ignore the click if this cart was the last one clicked
+            movingCart.style.display = 'block';
             if (this === lastClickedCart) {
                 return;
             }
