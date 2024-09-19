@@ -1,0 +1,35 @@
+
+:root{
+    --pixel: 1px;
+}
+
+/*mobile*/
+@media screen and (min-width: 480px) {
+    :root {
+        --pixel: 1px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    :root {
+        --pixel: 2px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    :root {
+        --pixel: 3px;
+    }
+}
+
+@media screen and (min-width: 3000px) {
+    :root {
+        --pixel: 4px;
+    }
+}
+
+@media screen and (min-width: 4000px) {
+    :root {
+        --pixel: 5px;
+    }
+}

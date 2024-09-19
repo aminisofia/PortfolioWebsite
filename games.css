@@ -36,7 +36,6 @@
     grid-column-gap: calc(5*var(--pixel));
     grid-auto-flow: column;
     padding: calc(4*var(--pixel));
-    /*overflow: hidden;*/
 }
 
 .cartBox > img {
