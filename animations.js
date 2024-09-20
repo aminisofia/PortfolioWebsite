@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const tviframe = document.getElementById('tviframe');
     const bigCart = document.querySelector('.bigCart');
     const bigCartInner = document.querySelector('.bigCartInner');
-    const otherCarts = document.querySelectorAll('.cartBox img');
+    const otherCarts = document.querySelectorAll('.box img');
     const bigCartFront = document.querySelector('.bigCartFront img');
     const movingCart = document.querySelector('.items > img:nth-child(4)');
     const groghat = document.querySelector('.stickers > img:nth-child(1)');

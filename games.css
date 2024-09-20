@@ -8,31 +8,49 @@
     margin-bottom: calc(40 * var(--pixel));
 }
 
-.cartBox {
+.box{
     display: grid;
-    margin-top: calc(20 * var(--pixel));
-    width: calc(175 * var(--pixel));
-    height: calc(129 * var(--pixel));
     background-image: url("images/mainBody/boxCarts2.png");
     image-rendering: pixelated;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: calc(20 * var(--pixel));
+    width: calc(175 * var(--pixel));
+    height: calc(129 * var(--pixel));
     grid-template-columns: repeat(2,calc(81*var(--pixel)));
     grid-template-rows: repeat(8,calc(15*var(--pixel)));
     grid-column-gap: calc(5*var(--pixel));
-    grid-auto-flow: column;
     padding: calc(4*var(--pixel));
 }
 
-.cartBox > img {
-    width: 100%;
-    transition: transform 0.3s ease;
-    cursor: pointer;
+.cartBox, .socialBox {
+    display: grid;
+    grid-auto-rows: calc(15*var(--pixel));
+   }
+
+.cartBox {
+    grid-column: 1 / 2;
 }
 
-.cartBox > img:hover {
+.socialBox {
+    grid-column: 2 / 3;
+}
+
+.cartBox > img, .socialBox > img {
+    height: calc(16*var(--pixel));
+    width: calc(81*var(--pixel));
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    image-rendering: pixelated;
+}
+
+.cartBox > img:hover, .socialBox > img:hover {
     transform: scale(1.1);
 }
+
+
+
+
 
 .bigCart {
     width: calc(200 * var(--pixel));
