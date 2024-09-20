@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastClickedCart = null;
     let groghatClickCount = 0;
     let floatAnimations = [];
+    let isCartClicked = false; // New variable to track if a cart has been clicked
 
     function spinBigCart() {
         void bigCartInner.offsetWidth;
@@ -73,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const letterRect = letters[index].getBoundingClientRect();
             const initialDiffX = (junimoRect.left + junimoRect.width / 2) - (letterRect.left + letterRect.width / 2);
             const initialDiffY = junimoRect.top - letterRect.bottom - 10; // 10px gap between junimo and letter
+
             function animateJumpAndFloat() {
                 // Cancel any existing float animation
                 if (floatAnimations[index]) {
@@ -134,6 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
+            isCartClicked = true; // Set to true when a cart is clicked
+
             if (lastClickedCart) {
                 lastClickedCart.style.pointerEvents = 'auto';
                 showClickableCart(lastClickedCart);
@@ -169,16 +173,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             tviframe.src = cart.getAttribute("data-game");
+
+            // Remove any existing click event listener on bigCart
+            bigCart.removeEventListener('click', bigCartClickHandler);
+
+            // Add the click event listener to bigCart
+            bigCart.addEventListener('click', bigCartClickHandler);
         });
     }
 
-    bigCart.addEventListener('click', function(event) {
-        if (bigCartFront.src.includes("images/stickynote.png")) {
+    // Define the bigCart click handler function
+    function bigCartClickHandler(event) {
+        if (bigCartFront.src.includes("images/stickynote.png") || !isCartClicked) {
             return;
         }
         event.stopPropagation();
         spinBigCart();
-    });
+    }
 
     groghat.addEventListener('click', function(event) {
         this.classList.remove('shake');
