@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const otherCarts = document.querySelectorAll('.box img');
     const bigCartFront = document.querySelector('.bigCartFront img');
     const movingCart = document.querySelector('.items > img:nth-child(4)');
-    const groghat = document.querySelector('.stickers > img:nth-child(1)');
+    const groghatStates = document.querySelectorAll('.stickers > img:nth-child(1), .stickers > img:nth-child(n+10):nth-child(-n+11)');
+    const groghatCenter = groghatStates[0];
+    const groghatLeft = groghatStates[1];
+    const groghatRight = groghatStates[2];
     const junimos = document.querySelectorAll('.stickers > img:nth-child(n+2):nth-child(-n+4)');
     const letters = document.querySelectorAll('.stickers > img:nth-child(n+5):nth-child(-n+7)');
     const frogs = document.querySelectorAll('.stickers > img:nth-child(n+8):nth-child(-n+9)');
@@ -33,14 +36,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastClickedCart = null;
     let groghatClickCount = 0;
     let floatAnimations = [];
-    let isCartClicked = false; // New variable to track if a cart has been clicked
+    let isCartClicked = false;
 
     function spinBigCart() {
         void bigCartInner.offsetWidth;
         bigCartInner.style.transition = 'transform 0.8s ease';
         bigCartInner.style.transform = isSpun ? 'rotateY(0deg)' : 'rotateY(360deg)';
         isSpun = !isSpun;
-        jumpFrogs(); // Make frogs jump every time the cart flips
+        jumpFrogs();
     }
 
     function showBigCart() {
@@ -191,27 +194,56 @@ document.addEventListener('DOMContentLoaded', function() {
         spinBigCart();
     }
 
-    groghat.addEventListener('click', function(event) {
-        this.classList.remove('shake');
-        void this.offsetWidth; // Trigger reflow
-        this.classList.add('shake');
 
-        setTimeout(() => {
-            this.classList.remove('shake');
-        }, 500);
+    function updateGroghatDirection(event) {
+        const groghatRect = groghatCenter.getBoundingClientRect();
+        const groghatCenterX = groghatRect.left + groghatRect.width / 2;
+        const leftThreshold = groghatCenterX - groghatRect.width / 2;
+        const rightThreshold = groghatCenterX + groghatRect.width / 2;
 
-        groghatClickCount++;
+        groghatCenter.style.display = 'block'; // Always show the center state
 
-        if (groghatClickCount === 5) {
-            // Show and animate each junimo sequentially
-            junimos.forEach((junimo, index) => {
-                setTimeout(() => {
-                    jumpJunimo(junimo, index);
-                }, index * 1000);
-            });
-
-            // Reset click count
-            groghatClickCount = 0;
+        if (event.clientX < leftThreshold) {
+            groghatLeft.style.display = 'block';
+            groghatRight.style.display = 'none';
+        } else if (event.clientX > rightThreshold) {
+            groghatLeft.style.display = 'none';
+            groghatRight.style.display = 'block';
+        } else {
+            groghatLeft.style.display = 'none';
+            groghatRight.style.display = 'none';
         }
+    }
+
+    document.addEventListener('mousemove', updateGroghatDirection);
+
+    function shakeGroghat() {
+        groghatStates.forEach(groghat => {
+            if (groghat.style.display !== 'none') {
+                groghat.classList.remove('shake');
+                void groghat.offsetWidth; // Trigger reflow
+                groghat.classList.add('shake');
+                setTimeout(() => {
+                    groghat.classList.remove('shake');
+                }, 500);
+            }
+        });
+    }
+
+    groghatStates.forEach(groghat => {
+        groghat.addEventListener('click', function(event) {
+            shakeGroghat();
+            groghatClickCount++;
+            if (groghatClickCount === 5) {
+                // Show and animate each junimo sequentially
+                junimos.forEach((junimo, index) => {
+                    setTimeout(() => {
+                        jumpJunimo(junimo, index);
+                    }, index * 1000);
+                });
+                // Reset click count
+                groghatClickCount = 0;
+            }
+        });
     });
 });

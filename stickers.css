@@ -16,6 +16,22 @@
     left: calc(40 * var(--pixel));
 }
 
+/*left side-eye*/
+.stickers > img:nth-child(10) {
+    width: calc(49 * var(--pixel));
+    height: calc(41 * var(--pixel));
+    top: calc(-18 * var(--pixel));
+    left: calc(40 * var(--pixel));
+}
+
+/*right side-eye*/
+.stickers > img:nth-child(11) {
+    width: calc(49 * var(--pixel));
+    height: calc(41 * var(--pixel));
+    top: calc(-18 * var(--pixel));
+    left: calc(40 * var(--pixel));
+}
+
 /*blue jumino*/
 .stickers > img:nth-child(2) {
      width: calc(16 * var(--pixel));
