@@ -17,7 +17,8 @@ const imageFilenames = [
     'splooshSmallCart.png',
     'ttCart.png',
     'ttMiniCart.png',
-    'ttSmallCart.png'
+    'ttSmallCart.png',
+    'internetCart.png'
 ];
 
 function preloadImages() {
