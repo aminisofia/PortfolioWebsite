@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram</title>
+</head>
+<body>
+<div class='sk-instagram-feed' data-embed-id='25465745'></div>
+<script src='https://widgets.sociablekit.com/instagram-feed/widget.js' async defer></script>
+
+<style id="dark-mode-styles">
+    /* Dark mode styles will be inserted here */
+</style>
+
+<script>
+    // Function to apply dark mode styles
+    function applyDarkMode() {
+        const darkModeStyles = `
+      .sk-instagram-feed {
+        background-color: #1a1a1a !important;
+        color: #ffffff !important;
+      }
+      .sk-instagram-feed .sk-instagram-item {
+        background-color: #2a2a2a !important;
+        border-color: #3a3a3a !important;
+      }
+      .sk-instagram-feed .sk-instagram-item-info {
+        color: #cccccc !important;
+      }
+      .sk-instagram-feed .sk-instagram-item-username {
+        color: #ffffff !important;
+      }
+      .sk-instagram-feed .sk-instagram-item-caption {
+        color: #e0e0e0 !important;
+      }
+      .sk-instagram-feed .sk-instagram-item-stats {
+        color: #999999 !important;
+      }
+      /* Add more specific styles as needed */
+    `;
+
+        document.getElementById('dark-mode-styles').textContent = darkModeStyles;
+    }
+
+    // Wait for the widget to load before applying dark mode
+    window.addEventListener('load', function() {
+        setTimeout(applyDarkMode, 1000); // Delay to ensure widget has loaded
+    });
+</script></body>
+</html>
