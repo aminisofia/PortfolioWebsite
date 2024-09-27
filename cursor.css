@@ -1,0 +1,12 @@
+/* Default cursor for the entire page */
+body {
+    cursor: url('images/mainBody/cursor.svg') 0 0, auto;
+    image-rendering: pixelated;
+}
+
+/* Pointer cursor for clickable elements */
+a, button, [role="button"], input[type="submit"], input[type="button"], .clickable {
+    cursor: url('images/mainBody/cursor2.svg') 0 0, pointer;
+    image-rendering: pixelated;
+}
+
