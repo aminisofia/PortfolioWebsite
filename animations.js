@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const junimos = document.querySelectorAll('.stickers > img:nth-child(n+2):nth-child(-n+4)');
     const letters = document.querySelectorAll('.stickers > img:nth-child(n+5):nth-child(-n+7)');
     const frogs = document.querySelectorAll('.stickers > img:nth-child(n+8):nth-child(-n+9)');
+    const clouds = document.querySelectorAll('.stickers > img:nth-child(n+12):nth-child(-n+13)');
 
     // Store original positions
     const junimoOriginalPositions = Array.from(junimos).map(junimo => ({
@@ -35,8 +36,21 @@ document.addEventListener('DOMContentLoaded', function() {
     let isSpun = false;
     let lastClickedCart = null;
     let groghatClickCount = 0;
-    let floatAnimations = [];
     let isCartClicked = false;
+
+    function createFloatingAnimation(element, initialX = 0, initialY = 0) {
+        let floatY = 0;
+        let floatDirection = 1;
+
+        function float() {
+            floatY += floatDirection * 0.1;
+            if (Math.abs(floatY) > 5) floatDirection *= -1;
+            element.style.transform = `translate(${initialX}px, ${initialY + floatY}px)`;
+            requestAnimationFrame(float);
+        }
+
+        float();
+    }
 
     function spinBigCart() {
         void bigCartInner.offsetWidth;
@@ -79,11 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const initialDiffY = junimoRect.top - letterRect.bottom - 10; // 10px gap between junimo and letter
 
             function animateJumpAndFloat() {
-                // Cancel any existing float animation
-                if (floatAnimations[index]) {
-                    cancelAnimationFrame(floatAnimations[index]);
-                }
-
                 // Set initial position
                 junimo.style.top = `${junimoOriginalPositions[index].top}px`;
                 junimo.style.left = `${junimoOriginalPositions[index].left}px`;
@@ -97,21 +106,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         junimo.style.transform = 'translateY(0)';
                         letters[index].style.transform = `translate(${initialDiffX}px, ${initialDiffY}px)`;
                         // Start floating animation after landing
-                        startFloatingAnimation();
+                        setTimeout(() => {
+                            createFloatingAnimation(letters[index], initialDiffX, initialDiffY);
+                        }, 900);
                     }, 800);
                 }, 100);
-            }
-
-            function startFloatingAnimation() {
-                let floatY = 0;
-                let floatDirection = 1;
-                function float() {
-                    floatY += floatDirection * 0.2;
-                    if (Math.abs(floatY) > 5) floatDirection *= -1;
-                    letters[index].style.transform = `translate(${initialDiffX}px, ${initialDiffY + floatY}px)`;
-                    floatAnimations[index] = requestAnimationFrame(float);
-                }
-                float();
             }
 
             animateJumpAndFloat();
@@ -194,7 +193,6 @@ document.addEventListener('DOMContentLoaded', function() {
         spinBigCart();
     }
 
-
     function updateGroghatDirection(event) {
         const groghatRect = groghatCenter.getBoundingClientRect();
         const groghatCenterX = groghatRect.left + groghatRect.width / 2;
@@ -245,5 +243,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 groghatClickCount = 0;
             }
         });
+    });
+
+    // Apply floating animation to cloud images
+    clouds.forEach(cloud => {
+        createFloatingAnimation(cloud);
     });
 });

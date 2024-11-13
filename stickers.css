@@ -105,3 +105,21 @@
     transition: all 0.5s ease-out;
     z-index: 1;
 }
+
+/*clouds*/
+.stickers > img:nth-child(12) {
+    width: calc(107 * var(--pixel));
+    height: calc(20 * var(--pixel));
+    top: calc(-65 * var(--pixel));
+    left: calc(370* var(--pixel));
+    z-index: 1;
+}
+
+.stickers > img:nth-child(13) {
+    width: calc(107 * var(--pixel));
+    height: calc(20 * var(--pixel));
+    top: calc(100 * var(--pixel));
+    left: calc(-40* var(--pixel));
+    transform: scaleX(-1);
+    z-index: 1;
+}

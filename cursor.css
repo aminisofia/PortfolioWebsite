@@ -1,12 +1,24 @@
-/* Default cursor for the entire page */
-body {
-    cursor: url('images/mainBody/cursor.svg') 0 0, auto;
+.cursor img {
     image-rendering: pixelated;
+    position: relative;
 }
 
-/* Pointer cursor for clickable elements */
-a, button, [role="button"], input[type="submit"], input[type="button"], .clickable {
-    cursor: url('images/mainBody/cursor2.svg') 0 0, pointer;
-    image-rendering: pixelated;
+.cursor {
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: 0.1s ease-out;
+    z-index: 5;
 }
 
+.cursor img:nth-child(1){
+    height: calc(13 * var(--pixel));
+    width: calc(19 * var(--pixel));
+}
+
+
+.cursor img:nth-child(2){
+    cursor: pointer;
+    height: calc(17 * var(--pixel));
+    width: calc(21 * var(--pixel));
+}
