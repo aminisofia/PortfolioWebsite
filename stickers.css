@@ -123,3 +123,13 @@
     transform: scaleX(-1);
     z-index: 1;
 }
+
+/*undertale dog*/
+.stickers > img:nth-child(14) {
+    width: calc(20 * var(--pixel));
+    height: calc(20 * var(--pixel));
+    top: calc(-185* var(--pixel));
+    left: calc(335* var(--pixel));
+    transform: scaleX(-1);
+    z-index: 1;
+}
