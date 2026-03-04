@@ -1,0 +1,28 @@
+.goo-filter-container {
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.pixel-canvas {
+    position: absolute;
+    z-index: 5;
+}
+
+.pixel-trail-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+#trail-root {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.trail-root {
+    background: none;
+}

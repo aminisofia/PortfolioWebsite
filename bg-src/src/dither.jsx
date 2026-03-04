@@ -92,8 +92,9 @@ void main() {
     float dist = length(uv - mouseNDC);
     float effect = 1.0 - smoothstep(0.0, mouseRadius, dist);
     f -= 0.5 * effect;
+    clamp(f, 0.0, 1.0);
   }
-  vec3 col = mix(vec3(0.0), waveColor, f);
+  vec3 col = mix(vec3(0.81, 0.4, 0.5), waveColor, f);
   gl_FragColor = vec4(col, 1.0);
 }
 `;
