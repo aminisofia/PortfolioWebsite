@@ -10,7 +10,7 @@
 
 .box{
     display: grid;
-    background-image: url("images/mainBody/boxCarts2.png");
+    background-image: url("../images/mainBody/boxCarts2.png");
     image-rendering: pixelated;
     background-repeat: no-repeat;
     background-size: cover;

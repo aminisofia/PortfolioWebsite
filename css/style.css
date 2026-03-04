@@ -2,6 +2,25 @@
     box-sizing: border-box;
 }
 
+/*Dither and React bits*/
+.dither-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+#background-root {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
 
 img {
     -webkit-user-select: none;  /* Safari */
@@ -11,7 +30,7 @@ img {
 }
 
 body {
-    background-image: url(images/mainBody/noisebg4.png);
+    background-image: url(../images/mainBody/noisebg4.png);
     background-repeat: repeat;
     display: flex;
     align-items: center;
@@ -23,12 +42,11 @@ body {
 
 }
 
-
 .aboutBox {
     image-rendering: pixelated;
     width: calc(430 * var(--pixel));
     height: calc(142 * var(--pixel));
-    background-image: url("images/mainBody/aboutMe2.png");
+    background-image: url("../images/mainBody/aboutMe2.png");
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
