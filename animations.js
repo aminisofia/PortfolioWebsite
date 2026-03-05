@@ -119,6 +119,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    let tobyScale = 1;
+    const toby = document.getElementById('toby');
+    toby.addEventListener('click', () => {
+        tobyScale *= -1;
+        toby.setAttribute("src", "./images/stickers/undertaleJump.png");
+        toby.style.transition = 'transform 0.3s ease-out';
+        toby.style.transform = `translateY(-40px) scaleX(${tobyScale})`;
+        setTimeout(() => {
+            toby.style.transition = `transform 0.2s ease-in`;
+            toby.style.transform = `translateY(0) scaleX(${tobyScale})`;
+            toby.setAttribute("src", "./images/stickers/undertaleDog.png");
+
+        }, 300);
+    });
+
     function jumpFrogs() {
         frogs.forEach(frog => {
             frog.style.transition = 'transform 0.3s ease-out';

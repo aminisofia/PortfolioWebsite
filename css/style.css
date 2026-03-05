@@ -21,30 +21,45 @@ body {
 
 .aboutBox {
     image-rendering: pixelated;
-    width: calc(430 * var(--pixel));
-    height: calc(142 * var(--pixel));
-    background-image: url("../images/mainBody/aboutMe2.png");
+    width: calc(359 * var(--pixel));
+    height: calc(150 * var(--pixel));
+    background-image: url("../images/mainBody/board.png");
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     margin-top: calc(40 * var(--pixel));
-    margin-bottom: calc(40 * var(--pixel));
+    margin-bottom: calc(60 * var(--pixel));
+    margin-left: calc(30 * var(--pixel));
+
 
 }
-
+/*aminisofia*/
 .aboutBox > img:first-child {
-    width: calc(100 * var(--pixel));
+    width: calc(135* var(--pixel));
+    height: calc(21* var(--pixel));
     position: absolute;
-    right: calc(40 * var(--pixel));
-    top: calc(35 * var(--pixel));
-    border-radius: 10px;
-    border: 1px #9babb2 dotted;
+    margin-left: calc(110 * var(--pixel));
+    margin-top: calc(-18* var(--pixel));
+}
+/*lights*/
+.aboutBox > img:nth-child(2) {
+    width: calc(351* var(--pixel));
+    height: calc(16 * var(--pixel));
+    margin-left: calc(5* var(--pixel));
+    margin-top: calc(5 * var(--pixel));
+}
+/*txt*/
+.aboutBox > img:nth-child(3) {
+    width: calc(136* var(--pixel));
+    height: calc(94 * var(--pixel));
+    margin-left: calc(25 * var(--pixel));
+    margin-top: calc(5* var(--pixel));
+}
+/*me*/
+.aboutBox > img:nth-child(4) {
+    width: calc(74* var(--pixel));
+    height: calc(89 * var(--pixel));
+    margin-left: calc(80* var(--pixel));
+    margin-bottom: calc(2 * var(--pixel));
 }
 
-.aboutBox > img:last-child {
-    width: calc(88 * var(--pixel));
-    position: absolute;
-    top: calc(5 * var(--pixel));
-    left: calc(33 * var(--pixel));
-
-}

@@ -126,10 +126,9 @@
 
 /*undertale dog*/
 .stickers > img:nth-child(14) {
-    width: calc(20 * var(--pixel));
-    height: calc(20 * var(--pixel));
-    top: calc(-185* var(--pixel));
-    left: calc(335* var(--pixel));
-    transform: scaleX(-1);
+    width: calc(26 * var(--pixel));
+    height: calc(26 * var(--pixel));
+    top: calc(-90* var(--pixel));
+    left: calc(250* var(--pixel));
     z-index: 1;
 }
