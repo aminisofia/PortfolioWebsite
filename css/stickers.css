@@ -108,6 +108,7 @@
 
 /*clouds*/
 .stickers > img:nth-child(12) {
+    display: none;
     width: calc(107 * var(--pixel));
     height: calc(20 * var(--pixel));
     top: calc(-65 * var(--pixel));
@@ -116,6 +117,7 @@
 }
 
 .stickers > img:nth-child(13) {
+    display: none;
     width: calc(107 * var(--pixel));
     height: calc(20 * var(--pixel));
     top: calc(100 * var(--pixel));

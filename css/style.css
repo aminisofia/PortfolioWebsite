@@ -50,15 +50,15 @@ body {
 }
 /*txt*/
 .aboutBox > img:nth-child(3) {
-    width: calc(136* var(--pixel));
-    height: calc(94 * var(--pixel));
+    width: calc(134* var(--pixel));
+    height: calc(98 * var(--pixel));
     margin-left: calc(25 * var(--pixel));
     margin-top: calc(5* var(--pixel));
 }
 /*me*/
 .aboutBox > img:nth-child(4) {
     width: calc(74* var(--pixel));
-    height: calc(89 * var(--pixel));
+    height: calc(95 * var(--pixel));
     margin-left: calc(80* var(--pixel));
     margin-bottom: calc(2 * var(--pixel));
 }
