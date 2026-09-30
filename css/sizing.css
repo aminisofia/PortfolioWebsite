@@ -6,30 +6,30 @@
 /*mobile*/
 @media screen and (min-width: 480px) {
     :root {
-        --pixel: 1px;
+        --pixel: 1.5px;
     }
 }
 
 @media screen and (min-width: 1000px) {
     :root {
-        --pixel: 2px;
+        --pixel: 2.5px;
     }
 }
 
 @media screen and (min-width: 2000px) {
     :root {
-        --pixel: 3px;
+        --pixel: 3.5px;
     }
 }
 
 @media screen and (min-width: 3000px) {
     :root {
-        --pixel: 4px;
+        --pixel: 4.5px;
     }
 }
 
 @media screen and (min-width: 4000px) {
     :root {
-        --pixel: 5px;
+        --pixel: 5.5px;
     }
 }
